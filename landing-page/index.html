@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Café & Conforto</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap");
+
+      :root {
+        --primary-color: #1e1e1e;
+        --secondary-color: #f2a74b;
+        --text-color: #ffffff;
+        --accent-color: #d4d4d4;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+      }
+
+      .logo {
+        width: 160px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style-type: none;
+      }
+
+      nav ul li {
+        margin-left: 20px;
+      }
+
+      nav ul li a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 50px 0;
+      }
+
+      .hero-content {
+        width: 50%;
+      }
+
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        margin-bottom: 30px;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 600;
+      }
+
+      .hero-image {
+        width: 45%;
+        position: relative;
+      }
+
+      .hero-image img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      .stats {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 50px;
+      }
+
+      .stat-item {
+        text-align: center;
+      }
+
+      .stat-item h3 {
+        font-size: 2rem;
+        color: var(--secondary-color);
+      }
+
+      .ideas {
+        padding: 50px 0;
+      }
+
+      .ideas h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+      }
+
+      .idea-card {
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+      }
+
+      .menu {
+        padding: 50px 0;
+      }
+
+      .menu h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+      }
+
+      .menu-categories {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 30px;
+      }
+
+      .menu-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .menu-item img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+
+      .menu-item-price {
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-weight: 600;
+      }
+
+      .location {
+        padding: 50px 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .location-map {
+        display: flex;
+        justify-content: center;
+      }
+
+      .location h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+      }
+
+      .feedback {
+        padding: 50px 0;
+      }
+
+      .feedback h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+      }
+
+      .feedback-card {
+        background-color: var(--accent-color);
+        color: var(--primary-color);
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+      }
+
+      footer {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 50px 0;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .footer-section {
+        width: 30%;
+      }
+
+      .footer-section h3 {
+        margin-bottom: 20px;
+      }
+
+      .footer-contacts {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 10px;
+      }
+
+      .social-icons a {
+        color: var(--text-color);
+        font-size: 1.5rem;
+      }
+
+      .social-icons img {
+        filter: invert(84%) sepia(23%) saturate(2204%) hue-rotate(323deg)
+          brightness(100%) contrast(91%);
+        width: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="container">
+      <img
+        src="/resources/img/logo.png"
+        alt="Café & Conforto Logo"
+        class="logo"
+      />
+      <nav>
+        <ul>
+          <li><a href="#coffee">Café</a></li>
+          <li><a href="#merchandise">Produtos</a></li>
+          <li><a href="#our-cafes">Nossas Cafeterias</a></li>
+          <li><a href="#wholesale">Atacado</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Aprecie Seu Café da Manhã</h1>
+          <p>
+            Um novo café concentrado gelado com concentrado pronto para beber.
+            Produtos Café & Conforto disponíveis em todo o país.
+          </p>
+          <a href="#" class="btn">Peça agora</a>
+        </div>
+        <div class="hero-image">
+          <img
+            src="./resources/img/top-down-mug.png"
+            alt="Xícara de café Café & Conforto"
+          />
+        </div>
+      </section>
+
+      <div class="stats">
+        <div class="stat-item">
+          <h3>80+</h3>
+          <p>Sabores Premium</p>
+        </div>
+        <div class="stat-item">
+          <h3>30+</h3>
+          <p>Lojas Próprias</p>
+        </div>
+        <div class="stat-item">
+          <h3>20+</h3>
+          <p>Anos de Experiência</p>
+        </div>
+      </div>
+
+      <section class="ideas">
+        <h2>Grandes Ideias Vêm de um Bom Café</h2>
+        <div class="idea-card">
+          <p>
+            Um novo café concentrado gelado com concentrado pronto para beber.
+            Desfrute da perfeita dose de frio.
+          </p>
+        </div>
+      </section>
+
+      <section class="menu" id="coffee">
+        <h2>Nosso Menu Especial</h2>
+        <div class="menu-items">
+          <div class="menu-item">
+            <img src="./resources/svg/coffe-mug.svg" alt="Café Americano" />
+            <span>Café Americano</span>
+            <span class="menu-item-price">R$5,00</span>
+          </div>
+          <div class="menu-item">
+            <img src="./resources/svg/coffe-mug.svg" alt="Cappuccino" />
+            <span>Cappuccino</span>
+            <span class="menu-item-price">R$5,00</span>
+          </div>
+          <div class="menu-item">
+            <img src="./resources/svg/coffe-mug.svg" alt="Latte" />
+            <span>Latte</span>
+            <span class="menu-item-price">R$5,00</span>
+          </div>
+          <div class="menu-item">
+            <img src="./resources/svg/coffe-mug.svg" alt="Espresso" />
+            <span>Espresso</span>
+            <span class="menu-item-price">R$5,00</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="location">
+        <h2>Venha nos conhecer</h2>
+        <div class="location-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58973.198348124046!2d-43.24757294179689!3d-22.510752000000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99090f2d28a12f%3A0xc0b6dd5988037bcf!2sAlforria%20Caf%C3%A9%20Petr%C3%B3polis!5e0!3m2!1spt-BR!2sbr!4v1725914247331!5m2!1spt-BR!2sbr"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="feedback">
+        <h2>Feedback dos Nossos Clientes</h2>
+        <div class="feedback-card">
+          <p>
+            "O melhor café que já experimentei! O ambiente é acolhedor e o
+            atendimento é excelente."
+          </p>
+          <p>- Maria Silva</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-content">
+        <div class="footer-section">
+          <img
+            src="/resources/img/logo.png"
+            alt="Café & Conforto Logo"
+            class="logo"
+          />
+        </div>
+        <div class="footer-section">
+          <h3>Serviços</h3>
+          <ul>
+            <li>Café</li>
+            <li>Bebidas</li>
+            <li>Padaria</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Links Úteis</h3>
+          <ul>
+            <li>Sobre Nós</li>
+            <li>FAQ</li>
+            <li>Contato</li>
+            <li>Blog</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Newsletter</h3>
+          <p>Inscreva-se para receber nossas últimas novidades</p>
+          <form>
+            <input type="email" placeholder="Seu e-mail" />
+            <button type="submit" class="btn">Inscrever</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-contacts">
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram">
+            <img src="./resources/svg/instagram.svg" alt="instagram.svgk" />
+          </a>
+          <a href="#" aria-label="Twitter">
+            <img src="./resources/svg/twitterx.svg" alt="twitterx.svg" />
+          </a>
+          <a href="#" aria-label="Facebook">
+            <img src="./resources/svg/facebook.svg" alt="facebook" />
+          </a>
+          <a href="#" aria-label="YouTube">
+            <img src="./resources/svg/youtube.svg" alt="youtube.svg" />
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
