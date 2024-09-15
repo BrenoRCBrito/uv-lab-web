@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Serenity Flow Studio de Yoga</title>
+    <style>
+      :root {
+        --primary-color: #f5f5f5;
+        --secondary-color: #e0e0e0;
+        --accent-color: #8e9775;
+        --text-color: #333333;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        line-height: 1.6;
+        font-size: 1.4em;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        background-image: url("resources/img/background.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 600px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+      }
+
+      nav {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 10px 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      nav ul li {
+        margin: 0 15px;
+      }
+
+      nav ul li a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .hero-content {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 40px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: var(--accent-color);
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: var(--accent-color);
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #7a8262;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+
+      .section:nth-child(even) {
+        background-color: var(--secondary-color);
+      }
+
+      .class-types {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      .class-type {
+        text-align: center;
+        margin: 20px;
+        flex-basis: calc(33.333% - 40px);
+      }
+
+      .testimonials {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      .testimonial {
+        background-color: white;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        flex-basis: calc(50% - 40px);
+      }
+
+      .pricing {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      .price-plan {
+        background-color: white;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        flex-basis: calc(33.333% - 40px);
+        text-align: center;
+      }
+
+      .price-plan ul {
+        text-align: justify;
+      }
+
+      footer {
+        background-color: var(--accent-color);
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <ul>
+            <li><a href="#home">Início</a></li>
+            <li><a href="#classes">Aulas</a></li>
+            <li><a href="#testimonials">Depoimentos</a></li>
+            <li><a href="#pricing">Preços</a></li>
+            <li><a href="#contact">Contato</a></li>
+          </ul>
+        </nav>
+        <div class="hero-content">
+          <h1>Serenity Flow</h1>
+          <p>
+            Descubra equilíbrio e harmonia interior em nosso estúdio de yoga
+          </p>
+          <a href="#" class="btn">Comece Sua Jornada</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="section">
+        <div class="container">
+          <h2>Sinta a Sensação Relaxante Onde Serenidade Encontra Movimento</h2>
+          <p>
+            No Serenity Flow, acreditamos no poder transformador do yoga para
+            trazer equilíbrio e paz para sua vida. Nosso estúdio oferece um
+            santuário onde você pode explorar a união de mente, corpo e espírito
+            por meio de movimentos conscientes e respiração.
+          </p>
+        </div>
+      </section>
+
+      <section id="classes" class="section">
+        <div class="container">
+          <h2>Sessões de Yoga para Equilíbrio e Paz Interior</h2>
+          <div class="class-types">
+            <div class="class-type">
+              <h3>Vinyasa Flow</h3>
+              <p>Sequências dinâmicas que ligam respiração e movimento</p>
+            </div>
+            <div class="class-type">
+              <h3>Kundalini Yoga</h3>
+              <p>Despertando energia através de movimento, respiração e som</p>
+            </div>
+            <div class="class-type">
+              <h3>Hatha</h3>
+              <p>Posturas tradicionais de yoga para força e flexibilidade</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials" class="section">
+        <div class="container">
+          <h2>O Que Dizem Sobre Nosso Serviço</h2>
+          <div class="testimonials">
+            <div class="testimonial">
+              <p>
+                "As aulas de yoga no Serenity Flow transformaram minha vida. Me
+                sinto mais equilibrada e em paz do que nunca."
+              </p>
+              <p>- Sarah M.</p>
+            </div>
+            <div class="testimonial">
+              <p>
+                "Como iniciante, eu estava nervoso para começar o yoga. Os
+                instrutores do Serenity Flow me fizeram sentir bem-vindo e
+                apoiado desde o primeiro dia."
+              </p>
+              <p>- Mark T.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" class="section">
+        <div class="container">
+          <h2>Planos de Preços para Sua Jornada de Bem-Estar com Yoga</h2>
+          <div class="pricing">
+            <div class="price-plan">
+              <h3>Básico</h3>
+              <p class="price">R$ 45/mês</p>
+              <ul>
+                <li>2 aulas por semana</li>
+                <li>Acesso a recursos online</li>
+              </ul>
+              <a href="#" class="btn">Escolher Plano</a>
+            </div>
+            <div class="price-plan">
+              <h3>Padrão</h3>
+              <p class="price">R$ 75/mês</p>
+              <ul>
+                <li>Aulas ilimitadas</li>
+                <li>1 workshop por mês</li>
+                <li>Acesso a recursos online</li>
+              </ul>
+              <a href="#" class="btn">Escolher Plano</a>
+            </div>
+            <div class="price-plan">
+              <h3>Premium</h3>
+              <p class="price">R$ 125/mês</p>
+              <ul>
+                <li>Aulas ilimitadas</li>
+                <li>2 workshops por mês</li>
+                <li>Consulta pessoal de yoga</li>
+                <li>Acesso a recursos online</li>
+              </ul>
+              <a href="#" class="btn">Escolher Plano</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container">
+          <h2>Experimente Gratuitamente por 14 Dias</h2>
+          <p>
+            Experimente o poder transformador do yoga no Serenity Flow.
+            Inscreva-se em nosso teste gratuito de 14 dias e comece sua jornada
+            para a paz interior e bem-estar.
+          </p>
+          <a href="#" class="btn">Começar Teste Gratuito</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>
+          &copy; 2023 Serenity Flow Yoga Studio. Todos os direitos reservados.
+        </p>
+        <div class="social-icons">
+          <!-- Adicione ícones de redes sociais aqui -->
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

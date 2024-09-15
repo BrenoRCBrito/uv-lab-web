@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechFest</title>
+    <style>
+      :root {
+        --primary-color: #1a1a1a;
+        --secondary-color: #333;
+        --accent-color: #00ff00;
+        --text-color: #ffffff;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        font-size: 1.4em;
+      }
+
+      .container {
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        background-color: var(--secondary-color);
+        padding: 20px 0;
+      }
+
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      nav ul li a {
+        color: var(--text-color);
+        text-decoration: none;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 100px 0;
+      }
+
+      .hero h1 {
+        font-size: 4em;
+        margin-bottom: 20px;
+      }
+
+      .speakers {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      .speaker {
+        width: 300px;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .speaker img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .schedule {
+        margin: 60px 0;
+      }
+
+      .timeline {
+        position: relative;
+        margin: 0 auto;
+      }
+
+      .timeline::after {
+        content: "";
+        position: absolute;
+        width: 6px;
+        background-color: var(--accent-color);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+      }
+
+      .timeline-item {
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+      }
+
+      .timeline-item::after {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: -17px;
+        background-color: var(--secondary-color);
+        border: 4px solid var(--accent-color);
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .left {
+        left: 0;
+        padding-right: 40px;
+        margin-left: -40px;
+        text-align: end;
+      }
+
+      .right {
+        left: 50%;
+        padding-left: 40px;
+      }
+
+      .right::after {
+        left: -16px;
+      }
+
+      .registration {
+        text-align: center;
+        margin: 60px 0;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: var(--accent-color);
+        color: var(--primary-color);
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+
+      .location {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      footer {
+        background-color: var(--secondary-color);
+        text-align: center;
+        padding: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#speakers">Palestrantes</a></li>
+          <li><a href="#schedule">Agenda</a></li>
+          <li><a href="#registration">Registre-se</a></li>
+          <li><a href="#location">Localização</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="container">
+          <h1>TechFest 2024</h1>
+          <p>Join us for the biggest tech event of the year!</p>
+          <p>October 15-17, 2023</p>
+        </div>
+      </section>
+
+      <section id="speakers" class="container">
+        <h2>Palestrantes em destaque</h2>
+        <div class="speakers">
+          <div class="speaker">
+            <img src="resources/img/bill.jpg" alt="Jane Doe" />
+            <h3>Bill Gates</h3>
+            <p>Pesquisador de Inteligência Artificial</p>
+          </div>
+          <div class="speaker">
+            <img src="resources/img/jobs.jpg" alt="John Smith" />
+            <h3>Steve Jobs</h3>
+            <p>Expert em cibersegurança</p>
+          </div>
+          <div class="speaker">
+            <img src="resources/img/mark.jpg" alt="Alice Johnson" />
+            <h3>Mark Zuckerberg</h3>
+            <p>Desenvolvedor Blockchain</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="schedule" class="schedule container">
+        <h2>Agenda do Evento</h2>
+        <div class="timeline">
+          <div class="timeline-item left">
+            <h3>Dia 1 - 15 de outubro</h3>
+            <p>9:00 - Cerimônia de abertura</p>
+            <p>10:00 - Discurso principal</p>
+            <p>14:00 - Workshop de IA</p>
+          </div>
+          <div class="timeline-item right">
+            <h3>Dia 2 - Outubro 16</h3>
+            <p>9:00 - Cybersecurity Panel</p>
+            <p>13:00 - Blockchain Seminar</p>
+            <p>16:00 PM - Networking Event</p>
+          </div>
+          <div class="timeline-item left">
+            <h3>Day 3 - October 17</h3>
+            <p>10:00 - Pitches de startup tech</p>
+            <p>14:00 - Cerimônia de encerramento</p>
+            <p>16:00 - Festa de despedida</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="registration" class="registration">
+        <h2>Registre-se</h2>
+        <p>Garanta sua vaga na TechFest 2024!</p>
+        <a href="#" class="btn">Registre-se aqui</a>
+      </section>
+
+      <section id="location" class="location container">
+        <h2>Localização do evento</h2>
+        <p>TechFest Centro de convenções</p>
+        <p>123 Rua da inovação, Cidade Tech, CEP 12345</p>
+        <h3>Hoteis Próximos</h3>
+        <p>Pousada tech - 300m de distância</p>
+        <p>Pousada da inovação - 700m distância</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 TechFest. Todos os direitos reservados.</p>
+    </footer>
+  </body>
+</html>
