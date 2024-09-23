@@ -116,7 +116,6 @@ video {
   min-height: 4rem;
   background-color: sandybrown;
   position: fixed;
-  transition: all 0.5s ease-in-out;
 }
 
 .header-nav #nav-check {
