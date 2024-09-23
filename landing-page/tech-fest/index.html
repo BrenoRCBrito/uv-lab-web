@@ -28,14 +28,13 @@
 
       header {
         background-color: var(--secondary-color);
-        padding: 20px 0;
+        height: 60px;
       }
 
       nav ul {
         list-style-type: none;
         padding: 0;
         display: flex;
-        justify-content: space-around;
       }
 
       nav ul li a {
@@ -46,6 +45,11 @@
       .hero {
         text-align: center;
         padding: 100px 0;
+        background-image: url("resources/img/background.jpg");
+        background-position: 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: black;
       }
 
       .hero h1 {
@@ -152,11 +156,43 @@
         text-align: center;
         padding: 20px 0;
       }
+
+      nav li:hover {
+        background-color: var(--accent-color);
+        transition: all .5s ease-out;
+      }
+
+      nav li a:hover {
+        color: black;
+        transition: all .5s ease-out;
+      }
+
+      nav{
+        height: 100%;
+      }
+
+      nav ul {
+        margin: 0;
+        height: 100%;
+      }
+
+      nav li a {
+        width: 100%;
+        display: block;
+        height: 100%;
+        line-height: 55px;
+      }
+
+      ul li {
+        width: 20%;
+        height: 100%;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
     <header>
-      <nav class="container">
+      <nav>
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#speakers">Palestrantes</a></li>
@@ -171,12 +207,12 @@
       <section id="home" class="hero">
         <div class="container">
           <h1>TechFest 2024</h1>
-          <p>Join us for the biggest tech event of the year!</p>
-          <p>October 15-17, 2023</p>
+          <p style="margin-top: 120px; margin-bottom: 0;">Junte-se a nos no maior evento tech da região!</p>
+          <p style="margin: 0;">15-17 Outubro, 2024</p>
         </div>
       </section>
 
-      <section id="speakers" class="container">
+      <section id="speakers" class="container" style="padding: 100px;">
         <h2>Palestrantes em destaque</h2>
         <div class="speakers">
           <div class="speaker">
@@ -197,7 +233,7 @@
         </div>
       </section>
 
-      <section id="schedule" class="schedule container">
+      <section id="schedule" class="schedule container" style="padding: 100px;">
         <h2>Agenda do Evento</h2>
         <div class="timeline">
           <div class="timeline-item left">
