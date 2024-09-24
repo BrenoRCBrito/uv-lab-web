@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="resources/css/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,7 +12,7 @@
     />
     <title>Contra as queimadas</title>
   </head>
-  <body style="height: 300vh">
+  <body>
     <header class="home-header">
       <div class="header-nav">
         <input type="checkbox" id="nav-check" />
@@ -20,11 +20,21 @@
           <span></span>
         </label>
         <nav class="text-xl">
-          <div class="nav-item"><span>O que é?</span></div>
-          <div class="nav-item"><span>Causas</span></div>
-          <div class="nav-item"><span>Consequências</span></div>
-          <div class="nav-item"><span>Prevenção</span></div>
-          <div class="nav-item"><span>Contato</span></div>
+          <a href="/index.html">
+            <div class="nav-item">
+              <span>Início</span>
+            </div>
+          </a>
+          <a href="cause.html">
+            <div class="nav-item">
+              <span>Causas</span>
+            </div>
+          </a>
+          <a href="prevention.html">
+            <div class="nav-item">
+              <span>Prevenção</span>
+            </div>
+          </a>
         </nav>
       </div>
       <div class="header-content">
@@ -42,7 +52,105 @@
           escrever um futuro mais verde. Juntos, podemos apagar o fogo e acender
           a esperança.
         </div>
+        <div>
+          <a href="#form">
+            <button class="form-button text-3xl">Participe</button></a
+          >
+        </div>
       </div>
     </header>
+    <main>
+      <div class="what-is">
+        <div class="what-is-title text-3xl">O que é?</div>
+        <div class="text-lg">
+          As queimadas são incêndios, geralmente de origem humana, que afetam
+          nossas florestas, cerrados e outros biomas. Esses eventos têm impactos
+          significativos em nossa biodiversidade, clima e saúde pública. Neste
+          site, você encontrará informações cruciais sobre causas, consequências
+          e formas de prevenção das queimadas em nosso país.
+        </div>
+      </div>
+    </main>
+    <article>
+      <div class="recent-fires">
+        <div class="recent-fires-title text-3xl">Incêndios recentes</div>
+        <a
+          href="https://www.cnnbrasil.com.br/nacional/poluicao-no-acre-provoca-suspensao-de-aulas-e-greve-nos-correios/"
+          class="recent-fire-card"
+        >
+          <img
+            class="recent-fire-card-img"
+            src="https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/09/WhatsApp-Image-2024-09-20-at-08.35.41-1024x576-1-e1727109917962.jpeg?w=1024&h=575&crop=1&quality=85"
+          />
+          <div class="recent-fire-card-summary text-lg">
+            Poluição por queimadas no Acre provoca suspensão de aulas e greve
+            nos Correios
+          </div>
+        </a>
+        <a
+          href="https://www.cnnbrasil.com.br/nacional/em-2024-amazonas-registra-o-maior-numero-de-incendios-da-serie-historica-aponta-inpe/"
+          class="recent-fire-card"
+        >
+          <img
+            class="recent-fire-card-img"
+            src="https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/09/53987620522_9f7f0d168c_c.jpg?w=350&h=195&crop=1"
+          />
+          <div class="recent-fire-card-summary text-lg">
+            Em 2024, Amazonas registra o maior número de incêndios da série
+            histórica, aponta Inpe
+          </div>
+        </a>
+        <a
+          href="https://www.cnnbrasil.com.br/nacional/sp-atinge-maior-numero-de-incendios-da-serie-historica-do-inpe/"
+          class="recent-fire-card"
+        >
+          <img class="recent-fire-card-img"
+          src=https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2021/08/queimada-Morro-Agudo.jpeg?w=350&h=195&crop=1"
+          />
+          <div class="recent-fire-card-summary text-lg">
+            SP atinge maior número de incêndios da série histórica do Inpe
+          </div>
+        </a>
+      </div>
+    </article>
+    <form id="form">
+      <div>
+        <div class="form-title text-3xl">
+          <span>Comece agora!</span>
+          <br />
+          <span class="form-title-highlight">Junte-se ao</span>
+          <span class="form-title-highlight"> movimento!</span>
+        </div>
+        <div>
+          <div class="form-input-group">
+            <div>
+              <label for="name-input">Name</label>
+              <input type="text" name="name" id="name-input" />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input type="text" name="email" id="email-input" />
+            </div>
+          </div>
+        </div>
+        <div>
+          <button class="form-button text-3xl">Junte-se</button>
+        </div>
+      </div>
+    </form>
+    <footer>
+      <div class="socials">
+        <img src="resources/svg/x.svg" />
+        <img src="resources/svg/youtube.svg" />
+        <img src="resources/svg/tiktok.svg" />
+        <img src="resources/svg/instagram.svg" />
+        <img src="resources/svg/facebook.svg" />
+      </div>
+      <div class="footer-logo">
+        <span>JUNTE-SE</span>
+        <br />
+        <span>ajude a fazer a diferença</span>
+      </div>
+    </footer>
   </body>
 </html>
