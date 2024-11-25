@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>P2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Contrail+One&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.cdnfonts.com/css/impact" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Oswald:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/themes/light.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/themes/dark.css"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.18.0/cdn/shoelace.js"
+      defer
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css" />
+    <script src="script.js" defer></script>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div id="logo">
+          <a href="#banner">
+            <img src="public/img/logo-cropped.png" alt="One Punch Man Logo" />
+          </a>
+        </div>
+        <div id="anchors">
+          <a href="#fav-chars">Characters</a>
+          <a href="#fav-eps">Episodes</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div id="theme-switcher">
+          <div
+            style="
+              display: flex;
+              align-items: end;
+              gap: 1rem;
+              padding: 0 1rem;
+              margin-bottom: 0.4rem;
+            "
+          >
+            <sl-icon id="sun" name="sun"></sl-icon>
+            <sl-switch id="theme-switch" size="large"></sl-switch>
+            <sl-icon id="moon" style="opacity: 0" name="moon"></sl-icon>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section id="banner">
+        <img src="public/img/banner.jpg" alt="banner" />
+        <p style="margin: 0.3rem 2rem; margin-top: 2rem">
+          The seemingly unimpressive Saitama has a rather unique hobby: being a
+          hero. In order to pursue his childhood dream, Saitama relentlessly
+          trained for three years, losing all of his hair in the process. Now,
+          Saitama is so powerful, he can defeat any enemy with just one punch.
+          However, having no one capable of matching his strength has led
+          Saitama to an unexpected problem—he is no longer able to enjoy the
+          thrill of battling and has become quite bored.
+        </p>
+        <br />
+        <p style="margin: 0.3rem 2rem">
+          One day, Saitama catches the attention of 19-year-old cyborg Genos,
+          who witnesses his power and wishes to become Saitama's disciple. Genos
+          proposes that the two join the Hero Association in order to become
+          certified heroes that will be recognized for their positive
+          contributions to society. Saitama, who is shocked that no one knows
+          who he is, quickly agrees. Meeting new allies and taking on new foes,
+          Saitama embarks on a new journey as a member of the Hero Association
+          to experience the excitement of battle he once felt.
+        </p>
+      </section>
+      <section>
+        <h2>Favorite Characters</h2>
+        <div id="fav-chars"></div>
+      </section>
+      <section>
+        <h2>Favorite Episodes</h2>
+        <div id="fav-eps"></div>
+      </section>
+      <section id="contact">
+        <h2>Get in Touch</h2>
+        <form id="contact-form" style="margin: 0 2rem; margin-bottom: 1rem">
+          <div>
+            <sl-input
+              type="text"
+              id="name"
+              name="name"
+              label="Name"
+              class="w-full"
+            ></sl-input>
+            <sl-alert id="error-name" variant="danger">
+              Please fill out the name field.
+            </sl-alert>
+          </div>
+          <div>
+            <sl-input
+              type="email"
+              id="email"
+              name="email"
+              label="Email"
+              class="w-full"
+            ></sl-input>
+            <sl-alert id="error-email" variant="danger">
+              Please provide a valid email address.
+            </sl-alert>
+          </div>
+          <div>
+            <sl-textarea
+              id="message"
+              name="message"
+              label="Message"
+              rows="4"
+            ></sl-textarea>
+            <sl-alert id="error-message" variant="danger">
+              Please fill out the message field.
+            </sl-alert>
+          </div>
+          <sl-button id="send-btn" variant="primary" style="margin-top: 1rem">
+            Send
+          </sl-button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 One Punch Man Fan Site. Powered by passion!</p>
+    </footer>
+  </body>
+</html>

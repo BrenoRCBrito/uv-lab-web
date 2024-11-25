@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f3f4f6;
+  min-height: 100vh;
+  padding: 2rem;
+  color: #1f2937;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#funcionamento {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.input-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#texto-tarefa {
+  flex: 1;
+  padding: 0.75rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+#texto-tarefa:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.button-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+button {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+button:hover {
+  background-color: #e5e7eb;
+}
+
+#criar-tarefa {
+  background-color: #3b82f6;
+  color: white;
+}
+
+#criar-tarefa:hover {
+  background-color: #2563eb;
+}
+
+#apaga-tudo,
+#remover-finalizados,
+#remover-selecionado {
+  background-color: #ef4444;
+  color: white;
+}
+
+#apaga-tudo:hover,
+#remover-finalizados:hover,
+#remover-selecionado:hover {
+  background-color: #dc2626;
+}
+
+#salvar-tarefas {
+  background-color: #10b981;
+  color: white;
+}
+
+#salvar-tarefas:hover {
+  background-color: #059669;
+}
+
+#lista-tarefas {
+  list-style-position: inside;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  padding: 1rem;
+  min-height: 200px;
+}
+
+#lista-tarefas li {
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background-color: white;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#lista-tarefas li:last-child {
+  margin-bottom: 0;
+}
+
+#lista-tarefas li:hover {
+  border-color: #d1d5db;
+  transform: translateX(4px);
+}
+
+#lista-tarefas li.selected {
+  background-color: #eff6ff;
+  border-color: #3b82f6;
+}
+
+#lista-tarefas li.completed {
+  text-decoration: line-through;
+  color: #9ca3af;
+  background-color: #f3f4f6;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 1rem;
+  }
+
+  .container {
+    padding: 1.5rem;
+  }
+
+  header {
+    font-size: 1.5rem;
+  }
+
+  .button-group {
+    grid-template-columns: 1fr;
+  }
+}

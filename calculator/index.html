@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+            user-select: none;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #202020;
+            margin: 0;
+            color: white;
+        }
+
+        .calculator {
+            background-color: #202020;
+            width: 320px;
+            padding: 10px;
+        }
+
+        .display-container {
+            height: 140px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            padding: 20px;
+        }
+
+        #display {
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            color: white;
+            text-align: right;
+            font-size: 44px;
+            padding: 10px;
+            margin: 0;
+        }
+
+        #display:focus {
+            outline: none;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            padding: 2px;
+        }
+
+        button {
+            height: 64px;
+            font-size: 20px;
+            color: white;
+            background-color: #323232;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #3f3f3f;
+        }
+
+        button:active {
+            background-color: #404040;
+        }
+
+        .operator {
+            background-color: #323232;
+        }
+
+        .special {
+            background-color: #323232;
+        }
+
+        #clear, #backspace {
+            background-color: #323232;
+        }
+
+        button[onclick="calculate()"] {
+            background-color: #47a7f5;
+        }
+
+        button[onclick="calculate()"]:hover {
+            background-color: #5ab0f5;
+        }
+
+        .memory-row {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 2px;
+            margin-bottom: 2px;
+        }
+
+        .memory-button {
+            background-color: #202020;
+            color: #909090;
+            height: 40px;
+            font-size: 14px;
+        }
+
+        .memory-button:hover {
+            background-color: #323232;
+        }
+
+        /* Adiciona feedback visual para tecla pressionada */
+        .key-pressed {
+            background-color: #404040 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display-container">
+            <input type="text" id="display" readonly>
+        </div>
+        <!-- <div class="memory-row">
+            <button class="memory-button" disabled>MC</button>
+            <button class="memory-button" disabled>MR</button>
+            <button class="memory-button" disabled>M+</button>
+            <button class="memory-button" disabled>M-</button>
+            <button class="memory-button" disabled>MS</button>
+            <button class="memory-button" disabled>M▾</button>
+        </div> -->
+        <div class="buttons">
+            <button onclick="addToDisplay('(')" data-key="(">(</button>
+            <button onclick="addToDisplay(')')" data-key=")">)</button>
+            <button id="backspace" onclick="backspace()" data-key="Backspace">⌫</button>
+            <button id="clear" onclick="clearDisplay()" data-key="Delete">C</button>
+
+            <button onclick="addToDisplay('7')" data-key="7">7</button>
+            <button onclick="addToDisplay('8')" data-key="8">8</button>
+            <button onclick="addToDisplay('9')" data-key="9">9</button>
+            <button class="operator" onclick="addToDisplay('/')" data-key="/">÷</button>
+
+            <button onclick="addToDisplay('4')" data-key="4">4</button>
+            <button onclick="addToDisplay('5')" data-key="5">5</button>
+            <button onclick="addToDisplay('6')" data-key="6">6</button>
+            <button class="operator" onclick="addToDisplay('*')" data-key="*">×</button>
+
+            <button onclick="addToDisplay('1')" data-key="1">1</button>
+            <button onclick="addToDisplay('2')" data-key="2">2</button>
+            <button onclick="addToDisplay('3')" data-key="3">3</button>
+            <button class="operator" onclick="addToDisplay('-')" data-key="-">−</button>
+
+            <button onclick="addToDisplay('0')" data-key="0">0</button>
+            <button onclick="addToDisplay('.')" data-key=",">.</button>
+            <button onclick="calculate()" data-key="Enter">=</button>
+            <button class="operator" onclick="addToDisplay('+')" data-key="+">+</button>
+        </div>
+    </div>
+
+    <script>
+        // Mapeamento de teclas para funções da calculadora
+        const keyMappings = {
+            'Enter': calculate,
+            '=': calculate,
+            'Backspace': backspace,
+            'Delete': clearDisplay,
+            'Escape': clearDisplay,
+            '+': () => addToDisplay('+'),
+            '-': () => addToDisplay('-'),
+            '*': () => addToDisplay('*'),
+            '/': () => addToDisplay('/'),
+            ',': () => addToDisplay('.'),
+            '.': () => addToDisplay('.'),
+            '(': () => addToDisplay('('),
+            ')': () => addToDisplay(')'),
+        };
+
+        // Adiciona evento de keydown ao documento
+        document.addEventListener('keydown', handleKeyPress);
+
+        // Função para lidar com pressionamento de teclas
+        function handleKeyPress(event) {
+            event.preventDefault(); // Previne comportamento padrão do navegador
+            
+            const key = event.key;
+            
+            // Adiciona efeito visual ao botão correspondente
+            const button = document.querySelector(`button[data-key="${key}"]`);
+            if (button) {
+                button.classList.add('key-pressed');
+            }
+
+            // Verifica se é um número
+            if (/^[0-9]$/.test(key)) {
+                addToDisplay(key);
+            }
+            // Verifica se é uma tecla mapeada
+            else if (keyMappings[key]) {
+                keyMappings[key]();
+            }
+        }
+
+        // Remove o efeito visual quando a tecla é solta
+        document.addEventListener('keyup', (event) => {
+            const button = document.querySelector(`button[data-key="${event.key}"]`);
+            if (button) {
+                button.classList.remove('key-pressed');
+            }
+        });
+
+        function addToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        function backspace() {
+            const display = document.getElementById('display');
+            display.value = display.value.slice(0, -1);
+        }
+
+        function calculate() {
+            const display = document.getElementById('display');
+            try {
+                // Substituir os símbolos de multiplicação e divisão pelos operadores JavaScript
+                let expression = display.value
+                    .replace('×', '*')
+                    .replace('÷', '/')
+                    .replace('−', '-')
+                    .replace(',', '.');
+                
+                const result = eval(expression);
+                
+                if (!isFinite(result)) {
+                    display.value = 'Não é possível dividir por zero';
+                } else {
+                    // Formatar o resultado para usar vírgula como separador decimal
+                    display.value = result.toString().replace('.', ',');
+                }
+            } catch (error) {
+                display.value = 'Erro';
+            }
+        }
+    </script>
+</body>
+</html>
